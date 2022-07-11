@@ -14,3 +14,5 @@ Installing Ethereum, Solidity Compiler (solc) and an Ethereum client like Geth i
 ## Links
   - PluralSight's Dec 2018 course "Developing Applications on Ethereum Blockchain" 
   - Geth basics, like creating an account: https://geth.ethereum.org/docs/getting-started 
+  - Sepolia Faucet: https://faucet.sepolia.dev/ 
+  - Goerli Faucet: https://fauceth.komputing.org/?chain=1115511

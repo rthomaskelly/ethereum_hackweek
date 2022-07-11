@@ -1,0 +1,16 @@
+{
+  "name": "testDeploy",
+	"version": "0.1.0",
+	"description": "Test deploying smart contracts with web3.js",
+	"main": "deploy.js",
+	"scripts": {
+	  "test": "mocha"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+    "web3": "^1.7.4",
+    "solc": "^0.8.15",
+		"fs": "0.0.1-security"
+	}
+}

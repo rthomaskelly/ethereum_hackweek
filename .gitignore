@@ -1,1 +1,5 @@
 build
+**/node_modules
+geth/*.log
+geth/keystore/UTC--*
+geth/data/geth/geth/*
