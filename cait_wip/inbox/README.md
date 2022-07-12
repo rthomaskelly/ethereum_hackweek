@@ -32,9 +32,9 @@ This compiler uses specific versions of solc, code is based on ^0.8.15. By compi
 _____________________
 ## FrameWork
 #### Code
-**1. Write** contract in Solidity 
-**2. Compile** using the solidity compiler in our javascript compile.js
-**3. Test** using Mocha testing and web3 Ganache provider
-**4. Deploy** to Goerli Test Net via Infura with with web3 Truffle HD wallet provider
+  1. **Write** contract in Solidity 
+  2. **Compile** using the solidity compiler in our javascript compile.js
+  3. **Test** using Mocha testing and web3 Ganache provider
+  4. **Deploy** to Goerli Test Net via Infura with with web3 Truffle HD wallet provider
 
 
