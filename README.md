@@ -21,3 +21,5 @@ See the Geth basics link below for full details.
   - Geth basics, like creating an account: https://geth.ethereum.org/docs/getting-started 
   - Sepolia Faucet: https://faucet.sepolia.dev/ 
   - Goerli Faucet: https://fauceth.komputing.org/?chain=1115511
+
+truffle hd wallet provbider gives us accounts too???
