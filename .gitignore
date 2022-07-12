@@ -3,3 +3,6 @@ build
 geth/*.log
 geth/keystore/UTC--*
 geth/data/geth/geth/*
+
+projects/Inbox/build/
+projects/DutchAuction/build/

@@ -36,4 +36,17 @@ After running the previous `truffle migrate` step you can manually interact with
     truffle(ganache)> instance.message()
     'Go away!'
 
+## Deploy to a Testnet (like Goerli)
+The process of deploying to a Testnet is the same as deploying to Ganache. Connect to the testnet with your Ethereum client (eg `geth` or `infura`). Then make sure the `networks` block in the `truffle-config.js` file has the correct information for you to connect.
+
+    #
+    # truffle-config.js file, networks block:
+    geth: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 8545,            // Standard Ethereum port (default: none)
+      gas: 5000000,
+      network_id: 5,       // 5 is Goerli
+    },
+
+    $ truffle migrate --network geth
 
