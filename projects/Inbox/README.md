@@ -1,5 +1,5 @@
 # Truffle
-This Inbox project from `cait_wip/` dir has been made `truffle` friendly.
+This Inbox project from `initial_investigation_dnu/` dir has been made `truffle` friendly.
 
 [Truffle is easy to learn.](https://trufflesuite.com/docs/truffle/quickstart/) 
 
