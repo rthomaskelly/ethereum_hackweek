@@ -18,10 +18,11 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+
 
 module.exports = {
   /**
@@ -44,11 +45,16 @@ module.exports = {
 
     ganache: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 7545,            // Standard Ethereum port (default: none)
+      port: 5545,            // Standard Ethereum port (default: none)
       gas: 5000000,
       network_id: "*",       // Any network (default: none)
     },
+
     geth: {
+      provider: function() {
+        return new HDWalletProvider("55bba976a943f614c77a17912a2222e1bf7e8deac5464c116936bbc65902f0cb", 
+            "https://goerli.infura.io/v3/e797a0545734454a9739ba86991de799")
+      },
       host: "127.0.0.1",     // Localhost (default: none)
       port: 8545,            // Standard Ethereum port (default: none)
       gas: 5000000,
