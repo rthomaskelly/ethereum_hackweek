@@ -44,7 +44,7 @@ contract BakePie {
             string memory people_will_feed = Utils.uint2str(servings());
             
             sentence = string(abi.encodePacked('This pie will taste ', sweet_or_sour, ' and feed ', people_will_feed));
-            apples.setInventory(15);
+            apples.setInventory(15); 
         } else {
             sentence = 'dangit were fresh outta apples';
         }
