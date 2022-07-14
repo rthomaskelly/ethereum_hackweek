@@ -30,10 +30,7 @@ app.post('/contractAddressSubmit', async (request, response) => {
   const contractAddress = data.address;
   const contract = smartContracts.createContract('0x' + contractAddress)
 
-  console.log('Message methods:')
-  console.log(JSON.stringify(contract.methods))
-  const message = await contract.methods.message.call();
-
+  const message = await contract.methods.message().call();
   console.log(`Read message '${message}'`);
 
   response.json({
