@@ -21,3 +21,7 @@ body {
 .bg-complement {
   background: #036335; /* a forest green, tyrian purple's complement */
 }
+
+.pie-details {
+  display: none
+}

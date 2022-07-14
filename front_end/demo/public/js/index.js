@@ -1,12 +1,12 @@
 
 $(function() {
   $('#contractTypeInbox').click(function() {
-    $('.inbox-details' + $(this).prop('class').match(/\d+/)).toggle();
-    $('.pie-details' + $(this).prop('class').match(/\d+/)).toggle();
+    $('.inbox-details').show();
+    $('.pie-details').hide();
   });
   $('#contractTypePie').click(function() {
-    $('.pie-details' + $(this).prop('class').match(/\d+/)).toggle();
-    $('.inbox-details' + $(this).prop('class').match(/\d+/)).toggle();
+    $('.pie-details').show();
+    $('.inbox-details').hide();
   });
 });
 
