@@ -19,7 +19,8 @@ app.set('view engine', 'ejs');
 
 app.get('/', (request, response) => {
   response.render('index', {
-    data: { message: message}
+    inbox: { message: message },
+    pie: { type: '' }
   });
 });
 
@@ -37,7 +38,7 @@ app.post('/contractAddressSubmit', async (request, response) => {
     message = await contract.methods.message().call();
     console.log(`Read message '${message}'`);
 
-    response.json({status: 'Success', redirect: '/'});
+    response.json({ status: 'Success', redirect: '/' });
   }
 });
 

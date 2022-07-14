@@ -26,7 +26,12 @@
     <link rel="stylesheet" href="css/site.css">
 
     <!-- Load html modules -->
-    <script src="js/jquery.min.js" type="text/javascript"></script> 
+    <!-- jquery -->
+    <script
+	    src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/jquery.min.js" type="text/javascript"></script> -->
     <!-- <script>$(function(){ $("#header").load("index_html/index_header.html"); });</script>
     <script>$(function(){ $("#footer").load("index_html/index_footer.html"); });</script> -->
   </head>
@@ -78,11 +83,42 @@
                   Inspect Contract
                 </button>
               </div>
+
+              <p>Custom Smart Contract type:</p>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="contractType" id="contractTypeInbox" value="Inbox" checked>
+                <label class="form-check-label" for="contractTypeInbox">
+                  Inbox
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="contractType" id="contractTypePie" value="Pie">
+                <label class="form-check-label" for="contractTypePie">
+                  Pie
+                </label>
+              </div>
+
             </div>
 
           </div>
-          <div class="row">
-            <%= data.message %>
+
+          <div class="row inbox-details">
+            <h5>Inbox Contract Details</h5>
+            <% if (inbox.message) { %>
+              <p>Inbox message: <%= data.message %></p>
+            <% } %>
+
+            <input type="text" class="form-control inboxMessageInput" id="inboxMessageInput"
+             placeholder="Message to send.">
+            <button class="btn btn-secondary btn-lg btn-block mb-3" type="submit"
+             id="inboxMessageSubmit">
+              Send Message to Smart Contract
+            </button>
+          </div>
+
+          <div class="row pie-details d-none">
+            <h5>Pie Contract Details</h5>
+            <%= pie.type %>
           </div>
 
         </div>
