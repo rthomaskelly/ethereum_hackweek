@@ -13,7 +13,7 @@ interface ISayHello {
 contract InterfaceHello is ISayHello {
    uint256 public age;
     function getAge() public pure override returns (uint256) {
-      return 33;
+      return 30;
    }
    function setAge(uint256 _age) public override {
       age = _age;
