@@ -13,28 +13,39 @@ app.use(express.json({ limit: '10mb' }));
 const database = new Datastore('database.db');
 database.loadDatabase();
 
+let message;
+
+app.set('view engine', 'ejs');
+
+app.get('/', (request, response) => {
+  response.render('index', {
+    data: { message: message}
+  });
+});
+
 app.post('/contractAddressSubmit', async (request, response) => {
   console.log("Logging body...");
   console.log(request.body);
-
   console.log("ip " + request.ip);
 
+  insertRequestIntoDatabase(request);
+
+  const contractAddress = request.body.contractAddress;
+  if (contractAddress) {
+    const contract = smartContracts.createContract('0x' + contractAddress)
+
+    message = await contract.methods.message().call();
+    console.log(`Read message '${message}'`);
+
+    response.json({status: 'Success', redirect: '/'});
+  }
+});
+
+function insertRequestIntoDatabase(request) {
   const data = request.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
   data.ip = request.ip;
 
   database.insert(data);
-
-
-  const contractAddress = data.address;
-  const contract = smartContracts.createContract('0x' + contractAddress)
-
-  const message = await contract.methods.message().call();
-  console.log(`Read message '${message}'`);
-
-  response.json({
-    status: 'success',
-    timestamp: timestamp,
-  });
-});
+}

@@ -60,22 +60,29 @@
       <div class="row">
         <div class="col-lg-5">
 
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text pt-1">0x</span>
+          <div class="row w-100">
+
+            <div class="form-group w-100">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text pt-1">0x</span>
+                </div>
+
+                <input type="text" class="form-control addressInput" id="addressInput"
+                 placeholder="Smart Contract Key">
               </div>
 
-              <input type="text" class="form-control addressInput" id="addressInput"
-               placeholder="Smart Contract Key">
+              <div class="text-center">
+                <button class="btn btn-success btn-lg btn-block mb-3" type="submit"
+                 id="addressSubmit">
+                  Inspect Contract
+                </button>
+              </div>
             </div>
 
-            <div class="text-center">
-              <button class="btn btn-success btn-lg btn-block mb-3" type="submit"
-               id="addressSubmit">
-                Inspect Contract
-              </button>
-            </div>
+          </div>
+          <div class="row">
+            <%= data.message %>
           </div>
 
         </div>
@@ -89,7 +96,7 @@
            <h4>Why?</h4>
            <p>CTC's crypto desk has felt that Blockchain programming will <strong>unlock revenue streams</strong>. CTC has been trying to hire an experienced Blockchain programmer without any luck.</p>
            <h4>Conclusions</h4>
-           <p><strong>CTC Engineers are capable of taking on Ethereum Blockchain projects.</strong> The Ethereum Blockchain development environment is well established and very active.</p>
+           <p><strong>CTC Quants and Engineers are capable of taking on Ethereum Blockchain projects.</strong> The Ethereum Blockchain development environment is well established and very active.</p>
         </div>
       </div>
     </main>

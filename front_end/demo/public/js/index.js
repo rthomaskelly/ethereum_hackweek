@@ -7,10 +7,8 @@ addressSubmitButton.addEventListener("click", async (e) => {
 
   const address = document.getElementById('addressInput').value;
 
-  console.log("address: " + address);
-
   const formData = {
-    address: address
+    contractAddress: address
   };
 
   const options = {
@@ -21,8 +19,15 @@ addressSubmitButton.addEventListener("click", async (e) => {
     body: JSON.stringify(formData),
   };
 
-  console.log("req body: " + JSON.stringify(options.body));
+  console.log("POST request body: " + JSON.stringify(options.body));
 
-  let response = await fetch('/contractAddressSubmit', options);
-  console.log(response.message);
+  const res = await fetch('/contractAddressSubmit', options);
+  const response = await res.json();
+  if (response.status === 'Success') {
+    console.log(response.redirect);
+    window.location = response.redirect;
+  } else {
+    console.log('Request failed!');
+    console.log(JSON.stringify(response));
+  }
 });
