@@ -7,6 +7,8 @@ contract Apples {
     string public apple_type; 
     string public result;
 
+    uint public inventory = 100;
+
     using Utils for *;
 
 
@@ -21,5 +23,19 @@ contract Apples {
             result = 'very sweet';
         }
         return result;
+    }
+
+    function setInventory(uint applesNeeded) public {
+        inventory = inventory - applesNeeded;
+    }
+
+    function checkInventory() public view returns (bool){
+        bool enough;
+        if (inventory > 90){
+            enough = true;
+        } else {
+            enough = false;
+        }
+        return enough;
     }
 }
