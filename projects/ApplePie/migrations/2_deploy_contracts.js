@@ -1,6 +1,6 @@
 const Apples = artifacts.require("Apples");
 const BakePie = artifacts.require("BakePie");
-const PieCrust = artifacts.require("PieCrust");
+const PieSize = artifacts.require("PieSize");
 const Utils = artifacts.require("Utils");
 // const InterfaceHello = artifacts.require("InterfaceHello");
 
@@ -16,7 +16,7 @@ module.exports = function(deployer) {
   apple_type = 'granny smith';
   deployer.deploy(Apples, apple_type);
   deployer.deploy(BakePie, 'granny smith', 1)
-  deployer.deploy(PieCrust, 9)
+  deployer.deploy(PieSize, 9)
 
 }
 
