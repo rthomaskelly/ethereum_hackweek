@@ -16,12 +16,18 @@ contract('BakePie', (accounts) => {
     assert.equal(flavor, 'very sour');
   });
 
-  it('read what the pie is like', async () => {
+  it('Ordered two pies - test out of inventory', async () => {
     await pie.orderPie({from: accounts[0]});
     await pie.orderPie({from: accounts[0]});
     const description = await pie.sentence();
-    assert.equal(description, 'dangit were fresh outta apples')
+    assert.equal(description, 'dangit we dont have the inventory for this!')
     console.log(description);
+  });
+
+  it('Ordered one pie - test serving size', async () => {
+    await pie.servings({from: accounts[0]});
+    const serving_size = await pie.serving_size();
+    assert.equal(serving_size, 10)
   });
 
 });

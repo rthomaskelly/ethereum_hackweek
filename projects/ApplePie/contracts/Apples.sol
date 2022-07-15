@@ -30,12 +30,10 @@ contract Apples {
     }
 
     function checkInventory() public view returns (bool){
-        bool enough;
+        bool enough = false;
         if (inventory > 90){
             enough = true;
-        } else {
-            enough = false;
-        }
+        } 
         return enough;
     }
 }
