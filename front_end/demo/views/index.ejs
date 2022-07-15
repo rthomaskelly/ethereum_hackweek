@@ -103,9 +103,9 @@
           </div>
 
           <div class="row inbox-details">
-            <h5>Inbox Contract Details</h5>
+            <h3>Inbox Contract Details</h3>
             <% if (inbox.message) { %>
-              <p>Inbox message: <%= data.message %></p>
+              <h4>Inbox message: <%= inbox.message %></h4>
             <% } %>
 
             <input type="text" class="form-control inboxMessageInput" id="inboxMessageInput"
@@ -117,8 +117,18 @@
           </div>
 
           <div class="row pie-details">
-            <h5>Pie Contract Details</h5>
-            <%= pie.type %>
+            <h3>Pie Contract Details</h3>
+            <% if (pie.sweetness) { %>
+              <h5>Pie sweetness: <%= pie.sweetness %></h5>
+              <h5>Servings: <%= pie.servings %></h5>
+            <% } %>
+            <% if (pie.orderMessage) { %>
+              <h5>Ordermessage: <%= pie.orderMessage %></h5>
+            <% } %>
+            <button class="btn btn-secondary btn-lg btn-block mb-3" type="submit"
+             id="orderPie">
+              Order Pie
+            </button>
           </div>
 
         </div>

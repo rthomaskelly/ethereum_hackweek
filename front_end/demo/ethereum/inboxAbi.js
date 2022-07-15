@@ -37,4 +37,4 @@ const contractAbi = [{
       "type": "function"
     }]
 
-module.exports.contractAbi = contractAbi
+module.exports.inboxAbi = contractAbi
